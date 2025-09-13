@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua Isaiah Navarro | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #0073e6;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    header a.button:hover {
+      background: #005bb5;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: square;
+      margin-left: 1.5rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fafafa;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      position: relative;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .card .desc {
+      margin: 0;
+      transition: max-height 0.3s, opacity 0.3s;
+    }
+    .card .desc {
+      max-height: 1000px;
+      opacity: 1;
+      overflow: hidden;
+    }
+    .card .desc.hide {
+      max-height: 0;
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+    }
+    .gallery {
+      display: none;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      overflow-x: auto;
+    }
+    .gallery.active {
+      display: flex;
+    }
+    .gallery img {
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 170px;
+      height: auto;
+      object-fit: cover;
+      background: #eee;
+    }
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-modal.active {
+      display: flex;
+    }
+    .gallery-modal-content {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: auto;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+      position: relative;
+      text-align: center;
+    }
+    .gallery-modal-content h4 {
+      margin-top: 0;
+    }
+    .gallery-modal-content .gallery {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .gallery-modal-content img {
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      background: #eee;
+    }
+    .gallery-modal-close {
+      position: absolute;
+      top: 0.7rem;
+      right: 1.2rem;
+      font-size: 2rem;
+      color: #333;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1;
+    }
+    @media (max-width: 600px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      .card .desc {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+      }
+      .card.expanded .desc {
+        max-height: 1000px;
+        opacity: 1;
+        margin-top: 0.5rem;
+        padding: 0;
+      }
+      .card::after {
+        content: '▼';
+        position: absolute;
+        right: 1rem;
+        top: 1.2rem;
+        font-size: 1rem;
+        color: #888;
+        transition: transform 0.3s;
+      }
+      .card.expanded::after {
+        transform: rotate(180deg);
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f1f1f1;
+      margin-top: 2rem;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Joshua Isaiah Navarro</h1>
+    <p>Developer | WordPress & WooCommerce Specialist | Problem Solver</p>
+    <a href="Joshua_Isaiah_Navarro_Resume.pdf" class="button" id="downloadResume">📄 Download My Resume</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a self-taught and adaptable developer with experience in building and customizing 
+      WordPress and WooCommerce websites, plugin development, and UI/UX bug fixing. 
+      I enjoy learning new technologies, and I’m looking to grow further by collaborating 
+      in a development team where I can sharpen my skills and align with industry standards.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>WordPress & WooCommerce Plugin Development (PHP, jQuery, JavaScript)</li>
+      <li>WooCommerce Product & Content Management (Elementor, Product Listings)</li>
+      <li>HTML & CSS</li>
+      <li>Elementor</li>
+      <li>Canva</li>
+      <li>Regex</li>
+      <li>Microsoft Office & Google Suite</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <h3>Custom WordPress/WooCommerce Plugins</h3>
+    <div class="projects">
+      <div class="card">
+        <h3>installment-price-with-2c2p</h3>
+        <button class="show-gallery-btn" type="button" data-title="Installment Price with 2C2P"
+          data-images="https://via.placeholder.com/350x200?text=Installment+Price+Screenshot+1,https://via.placeholder.com/350x200?text=Installment+Price+Screenshot+2">
+          View Screenshots
+        </button>
+        <p class="desc">Displays installment pricing options using the 2C2P payment gateway, with custom dashboard features. Includes multiple files for payment logic and admin dashboard integration.</p>
+      </div>
+      <div class="card">
+        <h3>branch-pickup</h3>
+        <button class="show-gallery-btn" type="button" data-title="Branch Pickup"
+          data-images="https://via.placeholder.com/350x200?text=Branch+Pickup+Screenshot+1,https://via.placeholder.com/350x200?text=Branch+Pickup+Screenshot+2">
+          View Screenshots
+        </button>
+        <p class="desc">WooCommerce plugin for branch pickup options at checkout, including custom metabox and sidebar features. Contains multiple modules for checkout, metabox, and sidebar.</p>
+      </div>
+      <div class="card">
+        <h3>brand-logo-attachment</h3>
+        <button class="show-gallery-btn" type="button" data-title="Brand Logo Attachment"
+          data-images="https://via.placeholder.com/350x200?text=Brand+Logo+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Allows attachment and management of brand logos in WooCommerce, with dashboard sidebar integration.</p>
+      </div>
+      <div class="card">
+        <h3>archive-page-tags</h3>
+        <button class="show-gallery-btn" type="button" data-title="Archive Page Tags"
+          data-images="https://via.placeholder.com/350x200?text=Archive+Tags+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Adds tag-based filtering and icons to archive pages for improved navigation and UX.</p>
+      </div>
+      <div class="card">
+        <h3>keyword-based-faq</h3>
+        <button class="show-gallery-btn" type="button" data-title="Keyword-based FAQ"
+          data-images="https://via.placeholder.com/350x200?text=FAQ+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Provides a keyword-based FAQ system with menu integration for better customer support.</p>
+      </div>
+      <div class="card">
+        <h3>hide-checkout-on-guest-session</h3>
+        <button class="show-gallery-btn" type="button" data-title="Hide Checkout on Guest Session"
+          data-images="https://via.placeholder.com/350x200?text=Hide+Checkout+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Hides the WooCommerce checkout page for users who are not logged in, enhancing security and user flow.</p>
+      </div>
+      <div class="card">
+        <h3>order-progress-tracker</h3>
+        <button class="show-gallery-btn" type="button" data-title="Order Progress Tracker"
+          data-images="https://via.placeholder.com/350x200?text=Order+Progress+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Adds an order progress tracker to WooCommerce, improving customer transparency.</p>
+      </div>
+      <div class="card">
+        <h3>notify-orders-on-admin</h3>
+        <button class="show-gallery-btn" type="button" data-title="Notify Orders on Admin"
+          data-images="https://via.placeholder.com/350x200?text=Notify+Orders+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Sends admin notifications for new processing orders in WooCommerce.</p>
+      </div>
+      <div class="card">
+        <h3>popup-privacy-policy</h3>
+        <button class="show-gallery-btn" type="button" data-title="Popup Privacy Policy"
+          data-images="https://via.placeholder.com/350x200?text=Privacy+Policy+Screenshot+1">
+          View Screenshot
+        </button>
+        <p class="desc">Displays a popup privacy policy notice to users for compliance and transparency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:joshuaisaiahnavarro@gmail.com">joshuaisaiahnavarro@gmail.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/joshua-isaiah-navarro</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Joshua Isaiah Navarro. All rights reserved.</p>
+  </footer>
+  <!-- Gallery Modal -->
+  <div class="gallery-modal" id="galleryModal">
+    <div class="gallery-modal-content" id="galleryModalContent">
+      <button class="gallery-modal-close" id="galleryModalClose" aria-label="Close">&times;</button>
+      <h4 id="galleryModalTitle"></h4>
+      <div class="gallery" id="galleryModalImages"></div>
+    </div>
+  </div>
+  <script>
+    // Mobile: Expand/collapse card descriptions
+    function isMobile() {
+      return window.innerWidth <= 600;
+    }
+    function updateCards() {
+      document.querySelectorAll('.projects .card').forEach(card => {
+        const desc = card.querySelector('.desc');
+        if (isMobile()) {
+          desc.classList.add('hide');
+          card.classList.remove('expanded');
+        } else {
+          desc.classList.remove('hide');
+          card.classList.remove('expanded');
+        }
+      });
+    }
+    window.addEventListener('resize', updateCards);
+    window.addEventListener('DOMContentLoaded', function() {
+      updateCards();
+      document.querySelectorAll('.projects .card').forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (!isMobile()) return;
+          // Only expand/collapse if clicking on the card, not a link or button
+          if (e.target.tagName === 'A' || e.target.classList.contains('show-gallery-btn')) return;
+          card.classList.toggle('expanded');
+          const desc = card.querySelector('.desc');
+          desc.classList.toggle('hide');
+        });
+      });
+
+      // Gallery popup logic
+      const modal = document.getElementById('galleryModal');
+      const modalTitle = document.getElementById('galleryModalTitle');
+      const modalImages = document.getElementById('galleryModalImages');
+      const modalClose = document.getElementById('galleryModalClose');
+
+      document.querySelectorAll('.show-gallery-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const title = btn.getAttribute('data-title');
+          const images = btn.getAttribute('data-images').split(',');
+          modalTitle.textContent = title;
+          modalImages.innerHTML = images.map(src => `<img src="${src.trim()}" alt="${title} Screenshot">`).join('');
+          modal.classList.add('active');
+        });
+      });
+
+      modalClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+        modalImages.innerHTML = '';
+      });
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          modalImages.innerHTML = '';
+        }
+      });
+
+      // Force download PDF on click
+      document.getElementById('downloadResume').addEventListener('click', function(e) {
+        e.preventDefault();
+        const link = document.createElement('a');
+        link.href = 'Joshua_Isaiah_Navarro_Resume.pdf';
+        link.download = 'Joshua_Isaiah_Navarro_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
+  </script>
+</body>
+</html>
