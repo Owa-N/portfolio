@@ -1,0 +1,199 @@
+FAQBOT
+
+faqbot
+When the faq chat is opened
+
+faqbot(1)
+A sample response from the faq chat
+
+faqbot(2)
+sample of saved conversation that can load on different devices as long as same account is logged in; along with the date to be deleted(15 days)
+
+faqbot(3)
+sample of multiple saved conversations saved
+
+============================================
+
+STOCKSTATUS
+
+stockstatus1
+green indicates that a product is in stock while red shows that a product is out of stock, orange for allowing backorder
+
+stockstatus2
+no indicator visible when the user is not an admin or store manager
+
+stockstatus3
+blue indicates that the product is a variable and the succeeding indicators are the corresponding stock status of the variations of the parent product
+
+============================================
+
+ORDERSTATUS
+
+orderstatus1
+A blank Order Status
+
+orderstatus2
+An order status shown on the My Account > Orders page(left)
+Same Order ID as shown on the admin order page
+
+orderstatus3
+A Cancelled Order Status
+
+orderstatus4
+A Completed Order Status
+
+orderstatus5
+The flow of order status from start of ordering(via card) up to  order completion
+
+orderstatus6
+
+============================================
+
+BRANCHPICKUP
+
+branchpickup1
+A sample dropdown of branch availability and stock quantity of a product in the single product page(only descriptive, not the branch selection process)
+
+branchpickup2
+Branch Stock Quantity metabox/es as seen on the admin manage product page
+
+branchpickup3
+Branch selection Popup on the checkout page and a stock insufficiency alert. Branches with insufficient stock compared to the cart quantity will have the branch disabled for selection.
+
+branchpickup4
+Branch Selection Popup with a branch unavailable due to insufficient stock and a branch available for selecting
+
+branchpickup5
+Branch Selection Popup with all available branches are selectable due to sufficient stock
+
+branchpickup6
+Branch Index. Input fields for each branch info(top). Saved branches with info saved on the database(bottom)
+
+branchpickup7
+Checkout page, Ship as the default delivery option(left), and the popup for branch selection when Pickup option is selected.
+
+branchpickup8
+After successfully selecting a branch for pickup, A div appears above the billing detail fields about the address and contacts and other information about the branch the customer will pick up
+
+branchpickup9
+Branch Pickup Admin Order page
+
+branchpickup10
+Branch Pickup Information as shown on the customer's order email
+
+=============================================
+
+PRIVACY POLICY POPUP
+
+policypopup1
+Data Privacy popup message when registering
+
+policypopup2
+Agreeing to consent statement, before ticking checkbox(top) and after(bottom)
+
+=============================================
+
+GUEST CHECKOUT
+
+guestcheckout
+A popup shows when no verified user is logged in. The popup encourages the guest to log in or to register to be able to proceed to the checkout. Additionally, the checkout page hides the billing, shipping details, and place order button if the user is a guest.
+
+===============================================
+
+ARCHIVE PAGE PRODUCT TAGS
+
+tag1
+All tags of a product will be shown under the product containers when hovered(desktop) or tapped by icon(mobile). The tags that are shared by more than 1 product has a yellow background and redirects to a product archive page showing all products under the clicked tag; tags without background implies that no other product shares that tag.
+
+==============================================
+
+ORDER NOTIFICATION
+
+ordernotif1
+
+ordernotif2
+When there is a new order, a notification is shown on the admin dashboard to inform store managers and other administrators without the order email notifications
+
+===============================================
+
+BRAND LOGO
+
+brand1
+A product container with a clickable logo of its brand(between the product image and price)
+
+brand2
+An archive page of a brand after a brand logo is clicked on a product container
+
+brand3
+Brand Menu when adding or deleting brands.
+
+===============================================
+
+INSTALLMENT
+
+installment1
+A product container with its own installment price
+
+installment2
+A dropdown showing the installment plans(descriptive only, not the actual selection of installment plan)
+
+installment3
+A comparison of the regular upfront price(left) as compered to the installment price(right)
+
+installment4
+A checkout breakdown where installment is not an option as a payment method because the cart contents are not all accepting installment plan.
+
+installment5
+Installment Price Field metabox on the admin manage product page
+
+installment6
+Adding/deleting and enabling/disabling months to installment promos on the Admin Menu page
+
+=============================================
+
+LOGOUT DUE TO INACTIVITY
+
+idlelogout1
+An account logged in with a 2 minute timer
+
+idlelogout2
+Logged out account after 2 minutes of idleness
+
+idlelogout 3
+Logout due to idleness flow(mobile)
+
+==============================================
+
+CONCEPT-BASED STYLING(beta)
+
+conceptstyling1
+A brand specific product grid style(Sony)
+
+conceptstyling2
+A landing page with specific style based on concept(1)
+
+conceptstyling3
+A landing page with specific style based on concept(2)
+
+conceptstyling4
+A brand specific product grid style(Acer)
+
+conceptstyling5
+A brand specific product container style(JBL)
+
+conceptstyling6
+A brand specific product grid style(TCL)
+
+conceptstyling7
+
+conceptstyling8
+
+=================================================
+
+PRODUCT CONTAINER ALIGNMENT
+
+alignment1
+Before
+
+alignment2
+After; Product Names and prices occupy 2 lines regardless of length, Product Images and Brand Logos have the same height
